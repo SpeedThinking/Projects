@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>External JavaScript example</title>
+    <script src="js.js" defer></script>
+    <link type="text/css" rel="stylesheet" href="style.css" >
+  </head>
+  <body>
+
+<h2>Salida en vivo</h2>
+
+<div class="output" style="min-height: 150px;">
+  <ul></ul>
+
+  <p></p>
+</div>
+
+<h2>Código editable</h2>
+
+<p class="a11y-label">
+  Presione Esc para alejar el foco del área de código (Tab inserta un carácter
+  de tabulación).
+</p>
+
+<textarea id="code" class="playable-code" style="height: 410px;width: 95%">
+var list = document.querySelector('.output ul');
+var totalBox = document.querySelector('.output p');
+var total = 0;
+list.innerHTML = '';
+totalBox.textContent = '';
+// number 1
+                'Underpants:6.99'
+                'Socks:5.99'
+                'T-shirt:14.99'
+                'Trousers:31.99'
+                'Shoes:23.99';
+
+for (var i = 0; i <= 0; i++) { // number 2
+  // number 3
+
+  // number 4
+
+  // number 5
+  itemText = 0;
+
+  var listItem = document.createElement('li');
+  listItem.textContent = itemText;
+  list.appendChild(listItem);
+}
+
+totalBox.textContent = 'Total: $' + total.toFixed(2);
+</textarea>
+
+<div class="playable-buttons">
+  <input id="reset" type="button" value="Restablecer" />
+  <input id="solution" type="button" value="Mostrar solución" />
+</div>
+</body>
+</html>

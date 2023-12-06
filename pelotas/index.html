@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bouncing balls</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Bouncing balls</h1>
+  <canvas></canvas>
+  <p id="ball-count">Bolas en pantalla: 0</p>
+
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width = window.innerWidth;
+    const height = canvas.height = window.innerHeight;
+
+    const ballCountElement = document.getElementById('ball-count');
+    let ballCount = 0;
+
+    // Función para generar un número aleatorio dentro de un rango
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    // Constructor Shape
+    class Shape {
+      constructor(x, y, velX, velY) {
+        this.x = x;
+        this.y = y;
+        this.velX = velX;
+        this.velY = velY;
+        this.exists = true; // Agrega la propiedad 'exists'
+      }
+    }
+
+    // Constructor Ball
+    class Ball extends Shape {
+      constructor(x, y, velX, velY, color, size) {
+        super(x, y, velX, velY);
+        this.color = color;
+        this.size = size;
+      }
+
+      // Método draw para dibujar la bola
+      draw() {
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+
+      // Método update para actualizar la posición de la bola
+      update() {
+        if ((this.x + this.size) >= width || (this.x - this.size) <= 0) {
+          this.velX = -this.velX;
+        }
+
+        if ((this.y + this.size) >= height || (this.y - this.size) <= 0) {
+          this.velY = -this.velY;
+        }
+
+        this.x += this.velX;
+        this.y += this.velY;
+      }
+
+      // Método collisionDetect para detectar colisiones con otras bolas
+      collisionDetect() {
+        for (const ball of balls) {
+          if (ball.exists && this !== ball) {
+            const dx = this.x - ball.x;
+            const dy = this.y - ball.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < this.size + ball.size) {
+              ball.exists = false;
+              ballCount--;
+              ballCountElement.textContent = `Bolas en pantalla: ${ballCount}`;
+            }
+          }
+        }
+      }
+    }
+
+    // Constructor EvilCircle
+    class EvilCircle extends Shape {
+      constructor(x, y) {
+        super(x, y, 20, 20);
+        this.color = 'white';
+        this.size = 10;
+      }
+
+      // Método draw para dibujar el círculo maligno
+      draw() {
+        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 3;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.stroke();
+      }
+
+      // Método checkBounds para evitar que el círculo maligno salga de la pantalla
+      checkBounds() {
+        if ((this.x + this.size) >= width || (this.x - this.size) <= 0) {
+          this.velX = -this.velX;
+        }
+
+        if ((this.y + this.size) >= height || (this.y - this.size) <= 0) {
+          this.velY = -this.velY;
+        }
+      }
+
+      // Método setControls para mover el círculo maligno con las teclas
+      setControls() {
+        const _this = this;
+        window.onkeydown = function (e) {
+          if (e.keyCode === 65) { // Tecla A
+            _this.x -= _this.velX;
+          } else if (e.keyCode === 68) { // Tecla D
+            _this.x += _this.velX;
+          } else if (e.keyCode === 87) { // Tecla W
+            _this.y -= _this.velY;
+          } else if (e.keyCode === 83) { // Tecla S
+            _this.y += _this.velY;
+          }
+        };
+      }
+
+      // Método collisionDetect para detectar colisiones con bolas
+      collisionDetect() {
+        for (const ball of balls) {
+          if (ball.exists) {
+            const dx = this.x - ball.x;
+            const dy = this.y - ball.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < this.size + ball.size) {
+              ball.exists = false;
+              ballCount--;
+              ballCountElement.textContent = `Bolas en pantalla: ${ballCount}`;
+            }
+          }
+        }
+      }
+    }
+
+    let balls = [];
+
+    function loop() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+      ctx.fillRect(0, 0, width, height);
+
+      while (balls.length < 25) {
+        const size = random(10, 20);
+        const ball = new Ball(
+          random(0 + size, width - size),
+          random(0 + size, height - size),
+          random(-7, 7),
+          random(-7, 7),
+          `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`,
+          size
+        );
+        balls.push(ball);
+        ballCount++;
+        ballCountElement.textContent = `Bolas en pantalla: ${ballCount}`;
+      }
+
+      for (const ball of balls) {
+        if (ball.exists) {
+          ball.draw();
+          ball.update();
+          ball.collisionDetect();
+        }
+      }
+
+      evilCircle.draw();
+      evilCircle.checkBounds();
+      evilCircle.collisionDetect();
+
+      requestAnimationFrame(loop);
+    }
+
+    const evilCircle = new EvilCircle(100, 100);
+    evilCircle.setControls();
+    loop();
+  </script>
+</body>
+</html>

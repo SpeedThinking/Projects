@@ -1,0 +1,120 @@
+/* General setup */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+  }
+  
+  /* Layout */
+  
+  section {
+    float: left;
+    width: 50%;
+  }
+  
+  aside {
+    float: left;
+    width: 30%;
+  }
+  
+  nav {
+    float: left;
+    width: 20%;
+  }
+  
+  footer {
+    clear: both;
+  }
+  
+  header, section, aside, nav, footer {
+    padding: 20px;
+  }
+  
+  /* header and footer */
+  
+  header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+  }
+  
+  /* WRITE YOUR CODE BELOW HERE */
+
+h1, h2 {
+ font-family: 'Courier New', Courier, monospace, Geneva, Tahoma, sans-serif;
+}
+  p, li {
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  a[href*="https"] {
+    background: url("icons8-external-link-64.png") no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+  }
+
+  li {
+    font-style: italic;
+    line-height: 1.5rem;
+  }
+  /*Links*/
+  a {
+    text-decoration: none;
+    padding: 1px 2px 4px;
+    color:green;
+    
+  }
+  a:hover {
+    color:green;
+    background-color:#cdfeaa;
+    border-bottom: 1px solid green;
+    cursor:pointer;
+  }
+  a:focus {
+    border-bottom: 1px solid;
+  background: #bae498;
+  cursor: pointer;
+  }
+  a:visited {
+    text-decoration:none;
+  }
+  /* nav style*/
+
+  nav>ul>li{ 
+    font-size: 30px;
+    width: 210px;
+    height: 90px;
+    border:2px solid black;
+    list-style-type: none;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 6px 8px black;
+    margin-bottom: 15px;
+    text-decoration: none;
+    text-align: center;
+    line-height:70px;
+    background-color: none;
+  }
+  nav>ul>li>a {
+display: block;
+  }
+nav>ul>li a:hover, a:focus{
+    background-color: #ffffff ;
+    border-bottom: 0px solid black;
+    cursor:pointer;
+
+}
+nav>ul>li>a:hover {
+    cursor:pointer;
+}
+
+  li.nav>a{
+    color:blueviolet;
+    font-style: normal;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  

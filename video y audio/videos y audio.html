@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Video y Audio</title>
+</head>
+<body>
+    <video 
+    controls
+    poster="images/MSMKSFWRWJE43IBFE7YMJKHNSM.jpg"
+    loop
+    muted
+    width="400px"
+    height="295px"
+    >
+        <source src="video/rabbit320.mp4" type="video/mp4" />
+        <source src="video/html_multimedia-and-embedding_video-and-audio-content_rabbit320.webm" type="video/webm" />
+        <track kind="subtitles" src="subtitles_en.vtt" srclang="en" />
+
+    </video>
+    <aside>
+    <picture>
+        <source type="image/jpeg+webp" srcset="images/R_480px.jpeg.webp" />
+        <source type="image/webp+jpeg" srcset="images/R.webp" />
+        <img
+          src="images/R_480px.jpeg"
+          alt="gato"
+          sizes="(max-width: 480px) 100vw, 480px"
+          srcset="images/R.jpeg, images/R.webp, images/R_480px.jpeg"
+        />
+      </picture>
+    </aside>
+</body>
+</html>

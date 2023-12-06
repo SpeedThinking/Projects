@@ -1,0 +1,115 @@
+/* General setup */
+
+html {
+    font-size: 10px;
+    margin: 0;
+    font-family: sans-serif;
+}
+  
+body {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+  
+  /* Typography */
+  
+h1 {
+    font-size: 3.2rem;
+    font-family:"ciclefina";
+    font-style: italic;
+    
+}
+  
+h2 {
+    font-size: 2.4rem;
+    font-family:"quicksandbold_italic";
+    font-weight:bold;
+    font-style:italic;
+
+  }
+  
+p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    word-spacing: 0.6rem;
+    font-family:"quicksandlight_italic" ;
+    font-style: italic;
+}
+@font-face {
+  font-family: 'chunkfive_printregular';
+  src: url('/ino/fonts/webfontkit-20230909-152515/chunk_five_print-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/chunk_five_print-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'chunkfiveregular';
+  src: url('/ino/fonts/webfontkit-20230909-152515/chunkfive-regular-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/chunkfive-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'quicksandlight';
+  src: url('/ino/fonts/webfontkit-20230909-152515/quicksand-light-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/quicksand-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'quicksandlight_italic';
+  src: url('/ino/fonts/webfontkit-20230909-152515/quicksand-lightitalic-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/quicksand-lightitalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'quicksandregular';
+  src: url('/ino/fonts/webfontkit-20230909-152515/quicksand-regular-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/quicksand-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'quicksanddash';
+  src: url('/ino/fonts/webfontkit-20230909-152515/quicksand_dash-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/quicksand_dash-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'quicksandbold';
+  src: url('/ino/fonts/webfontkit-20230909-152515/quicksand-bold-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/quicksand-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'quicksandbold_italic';
+  src: url('/ino/fonts/webfontkit-20230909-152515/quicksand-bolditalic-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/quicksand-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'quicksanditalic';
+  src: url('/ino/fonts/webfontkit-20230909-152515/quicksand-italic-webfont.woff2') format('woff2'),
+       url('/ino/fonts/webfontkit-20230909-152515/quicksand-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ciclefina";
+  src: url("fonts/cicle_fina-webfont.eot");
+  src:
+    url("fonts/cicle_fina-webfont.eot?#iefix") format("embedded-opentype"),
+    url("fonts/cicle_fina-webfont.woff2") format("woff2"),
+    url("fonts/cicle_fina-webfont.woff") format("woff"),
+    url("fonts/cicle_fina-webfont.ttf") format("truetype"),
+    url("fonts/cicle_fina-webfont.svg#ciclefina") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
