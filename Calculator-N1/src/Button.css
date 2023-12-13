@@ -1,0 +1,57 @@
+
+
+#display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgba(255, 249, 249, 1);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset; 
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+  font: normal 25px/normal "Times New Roman", Times, serif; 
+  color: rgba(0,0,0,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+
+#number-area,
+#operation-area {
+  font: normal 25px/normal "Times New Roman", Times, serif;
+  color: rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.66);
+  resize: none;
+  overflow: hidden;
+  right: 0;
+  margin: -1px;
+  border: none;
+  width: 350px;
+  text-align: right;
+  direction: rtl;
+  padding-right: 20px;
+}
+
+#number-area {
+  padding-top: 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+#operation-area {
+  padding-top: 10px;
+  padding-bottom: 1px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  font-size: 20px;
+}
+
+#calculator {
+  -webkit-user-select: none;
+  user-select: none;
+}

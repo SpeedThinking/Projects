@@ -1,0 +1,128 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 32px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  position: absolute center;
+  border: 1px solid transparent;
+  padding: 0.8em 1.9em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: sans-serif;
+  background-color: aliceblue;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: content-box;
+  box-sizing: 100px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: rgba(0,0,0,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  -webkit-box-shadow: 3px 4px 8px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 3px 4px 8px 0 rgba(0,0,0,0.2) ;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: border-color 0.35s all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  margin-bottom: 3.5px;
+  width:90px;
+  height:50px;
+}
+button:nth-child(4n) {
+  margin-bottom: 0;
+}
+
+#calculator {
+  align-items: center;
+  position: absolute center;
+  border: 2px solid rgba(0, 0, 0,) center;
+  background-color: hsla(341, 100%, 100%, 0.98);
+  width: 60%; 
+  padding: 30px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 32px auto; 
+  width: fit-content;
+  border-radius: 6px 0px 6px 6px;
+
+  }
+  #key-pad {
+    text-align: center; 
+    margin-top: 20px; 
+    
+    gap: 8px;
+  }
+button:hover {
+  background-color: hsla(208, 100%, 94%, 0.88);
+  color: black;
+}
+button:focus {
+  background-color: hsla(208, 100%, 90%, 0.58); /* make a modification with js that make the focus 3s  */
+}
+
+
+
+.button {
+  border: 2px solid rgba(0, 0, 0,) center;
+}
+
+button#equal {
+  background-color: hsla(208, 100%, 64%, 0.822) ;
+}
+button#equal:hover {
+  background-color:hsla(208, 60%, 54%, 0.622) ;
+}
+
+.container {
+  align-items: center;
+  position: absolute center;
+  border: 2px solid rgba(0, 0, 0,) center;
+  background-color: #242424;
+  width: 60%; 
+  padding: 30px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 32px auto; 
+  width: fit-content;
+  border-radius: 6px 0px 6px 6px;
+}
+.container>h1 {
+  color: white;
+  font: italic bolder bold arial, sans-serif;
+}
