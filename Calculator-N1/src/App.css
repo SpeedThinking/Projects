@@ -126,3 +126,19 @@ button#equal:hover {
   color: white;
   font: italic bolder bold arial, sans-serif;
 }
+#title {
+  transition: color 1s ease-in-out;
+}
+
+#footer {
+background-color: aliceblue;
+text-align: center;
+color: #242424;
+padding: 100px;
+margin-top: 10px;
+font: italic bolder bold arial, sans-serif;
+width:100%;
+position: fixed;
+}
+
+
